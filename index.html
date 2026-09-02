@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="記錄護膚品及化妝品，按品牌、功效和有效日期搜尋。">
+  <title>美妝小庫｜護膚品與化妝品管理</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">✦</span>美妝小庫</a>
+    <nav><a class="active" href="#products">我的產品</a><a href="#reminders">到期提醒</a></nav>
+    <button class="bell" aria-label="到期提醒">♢<span id="bell-count">0</span></button>
+  </header>
+
+  <main id="top">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">✦ YOUR BEAUTY SHELF</p>
+        <h1>把每一件喜歡的，<br><em>好好用完。</em></h1>
+        <p class="intro-copy">記低開封與有效日期，隨時找回你需要的護膚與彩妝。</p>
+      </div>
+      <div class="stats" id="reminders">
+        <div><i>□</i><span><strong id="total-count">0</strong> 件產品</span></div>
+        <div><i>◌</i><span><strong id="opened-count">0</strong> 件已開封</span></div>
+        <div id="expiry-stat"><i>◷</i><span><strong id="expiry-count">0</strong> 件即將到期</span></div>
+      </div>
+    </section>
+
+    <section class="workspace" id="products">
+      <div class="search-row">
+        <label class="search-box"><span>⌕</span><input id="search" type="search" placeholder="搜尋產品、品牌或功效…"></label>
+        <button class="primary" id="add-product"><b>＋</b> 新增產品</button>
+      </div>
+      <div class="filters">
+        <div class="benefit-filters" id="benefit-filters"></div>
+        <div class="select-filters">
+          <label>品牌 <select id="brand-filter"></select></label>
+          <label>日期 <select id="date-filter"><option>全部日期</option><option>30日內</option><option>90日內</option><option>已過期</option></select></label>
+        </div>
+      </div>
+      <div class="results-heading"><div><span>▦</span><h2>我的收藏</h2><b id="result-count">0</b></div><button id="clear-filters" hidden>清除全部篩選</button></div>
+      <div class="product-grid" id="product-grid"></div>
+      <div class="empty" id="empty" hidden><span>□</span><h3>找不到相符產品</h3><p>試試清除篩選，或新增一件產品。</p><button class="primary" id="empty-add">＋ 新增產品</button></div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modal" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-head"><div><p class="eyebrow">BEAUTY NOTE</p><h2 id="modal-title">加入新產品</h2></div><button id="close-modal" aria-label="關閉">×</button></div>
+      <form id="product-form">
+        <div class="form-grid">
+          <label class="full">產品名稱 *<input name="name" required placeholder="例如：水凝亮肌精華"></label>
+          <label>品牌 *<input name="brand" required placeholder="品牌名稱"></label>
+          <label>類別<select name="category"><option>護膚</option><option>彩妝</option><option>精華</option><option>面霜</option><option>防曬</option><option>底妝</option></select></label>
+          <label>購買日期<input name="purchaseDate" type="date"></label>
+          <label>有效日期 *<input name="expiryDate" type="date" required></label>
+          <fieldset class="full"><legend>主要功效</legend><div class="check-tags" id="benefit-options"></div></fieldset>
+          <label class="full">備註<textarea name="notes" placeholder="用法、使用感或其他提醒…"></textarea></label>
+          <label class="switch-label"><input name="opened" type="checkbox"><span class="switch"></span><span>這件產品已開封</span></label>
+        </div>
+        <p class="storage-note">ⓘ 資料只會保存在這部裝置的瀏覽器內。</p>
+        <div class="modal-actions"><button type="button" id="cancel-modal">取消</button><button type="submit" class="primary">✓ 儲存產品</button></div>
+      </form>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
