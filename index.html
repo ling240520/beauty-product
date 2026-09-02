@@ -51,12 +51,20 @@
       <div class="modal-head"><div><p class="eyebrow">BEAUTY NOTE</p><h2 id="modal-title">加入新產品</h2></div><button id="close-modal" aria-label="關閉">×</button></div>
       <form id="product-form">
         <div class="form-grid">
+          <div class="photo-field full">
+            <div class="photo-preview" id="photo-preview"><span>＋</span><small>尚未加入照片</small></div>
+            <div class="photo-controls">
+              <label class="photo-button">拍照或選擇照片<input id="photo-input" type="file" accept="image/*" capture="environment"></label>
+              <button type="button" id="remove-photo" hidden>移除照片</button>
+              <small>照片會自動縮小，只儲存在這部裝置。</small>
+            </div>
+          </div>
           <label class="full">產品名稱 *<input name="name" required placeholder="例如：水凝亮肌精華"></label>
           <label>品牌 *<input name="brand" required placeholder="品牌名稱"></label>
           <label>類別<select name="category"><option>護膚</option><option>彩妝</option><option>精華</option><option>面霜</option><option>防曬</option><option>底妝</option></select></label>
-          <label>購買日期<input name="purchaseDate" type="date"></label>
+          <label>存放位置<input name="location" placeholder="例如：浴室鏡櫃、睡房抽屜"></label>
           <label>有效日期 *<input name="expiryDate" type="date" required></label>
-          <fieldset class="full"><legend>主要功效</legend><div class="check-tags" id="benefit-options"></div></fieldset>
+          <label class="full">功效（可自由添加及修改）<input name="benefits" placeholder="例如：保濕、提亮、舒緩（請用逗號分隔）"><small>可輸入任何功效，多項功效請以逗號分隔。</small></label>
           <label class="full">備註<textarea name="notes" placeholder="用法、使用感或其他提醒…"></textarea></label>
           <label class="switch-label"><input name="opened" type="checkbox"><span class="switch"></span><span>這件產品已開封</span></label>
         </div>
