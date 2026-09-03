@@ -10,7 +10,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#top"><span class="brand-mark">✦</span>美妝小庫</a>
-    <nav><a class="active" href="#products">我的產品</a><a id="opened-nav" href="#products">已開封產品</a></nav>
+    <nav><a id="all-nav" class="active" href="#products">我的產品</a><a id="opened-nav" href="#products">已開封產品</a></nav>
     <button class="bell" aria-label="到期提醒">♢<span id="bell-count">0</span></button>
   </header>
 
@@ -39,11 +39,10 @@
         <div class="select-filters">
           <label>品牌 <select id="brand-filter"></select></label>
           <label>類別 <select id="category-filter"><option>全部類別</option></select></label>
-          <label>狀態 <select id="status-filter"><option>全部狀態</option><option>已開封</option><option>未開封</option></select></label>
           <label>日期 <select id="date-filter"><option>全部日期</option><option>30日內</option><option>90日內</option><option>半年內</option><option>已過期</option></select></label>
         </div>
       </div>
-      <div class="results-heading"><div><span>▦</span><h2>我的收藏</h2><b id="result-count">0</b></div><button id="clear-filters" hidden>清除全部篩選</button></div>
+      <div class="results-heading"><div><span>▦</span><h2>我的收藏</h2><b id="result-count">0</b></div><div class="filter-actions"><button id="refilter">↻ 重新篩選</button><button id="clear-filters" hidden>清除全部篩選</button></div></div>
       <div class="product-grid" id="product-grid"></div>
       <div class="empty" id="empty" hidden><span>□</span><h3>找不到相符產品</h3><p>試試清除篩選，或新增一件產品。</p><button class="primary" id="empty-add">＋ 新增產品</button></div>
     </section>
