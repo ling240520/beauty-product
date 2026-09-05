@@ -63,10 +63,10 @@
           </div>
           <label class="full">產品名稱 *<input name="name" required placeholder="例如：水凝亮肌精華"></label>
           <label>品牌 *<input name="brand" required placeholder="品牌名稱"></label>
-          <label>類別（可自由新增及修改）<input name="category" list="category-options" required placeholder="例如：精華、唇妝"><datalist id="category-options"></datalist></label>
+          <div class="choice-field"><span class="field-label">類別（點選或自行輸入）</span><div class="choice-buttons" id="category-picks"></div><input name="category" list="category-options" required placeholder="例如：精華、唇妝"><datalist id="category-options"></datalist></div>
           <label>存放位置<input name="location" placeholder="例如：浴室鏡櫃、睡房抽屜"></label>
           <label>有效日期 *<input name="expiryDate" type="date" required></label>
-          <label class="full">功效（可自由添加及修改）<input name="benefits" placeholder="例如：保濕、提亮、舒緩（請用逗號分隔）"><small>可輸入任何功效，多項功效請以逗號分隔。</small></label>
+          <div class="choice-field full"><span class="field-label">功效（可多選或自行輸入）</span><div class="choice-buttons" id="benefit-picks"></div><input name="benefits" placeholder="例如：保濕、提亮、舒緩（請用逗號分隔）"><small>可點選多項；新增功效請直接輸入並以逗號分隔。</small></div>
           <label class="full">備註<textarea name="notes" placeholder="用法、使用感或其他提醒…"></textarea></label>
           <label class="switch-label"><input name="opened" type="checkbox"><span class="switch"></span><span>這件產品已開封</span></label>
         </div>
